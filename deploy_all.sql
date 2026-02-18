@@ -37,10 +37,9 @@ CREATE WAREHOUSE IF NOT EXISTS SFE_FIBERIFIC_WH
 
 USE WAREHOUSE SFE_FIBERIFIC_WH;
 
--- Git repo setup
+-- Git repo setup (public repo — no credentials needed)
 CREATE GIT REPOSITORY IF NOT EXISTS SNOWFLAKE_EXAMPLE.TOOLS.SFE_FIBERIFIC_REPO
   API_INTEGRATION = SFE_GIT_API_INTEGRATION
-  GIT_CREDENTIALS = SNOWFLAKE_EXAMPLE.TOOLS.SFE_GIT_CREDS
   ORIGIN = 'https://github.com/sfc-gh-miwhitaker/fiberific.git'
   COMMENT = 'DEMO: Fiberific source repo (Expires: 2026-03-20)';
 
