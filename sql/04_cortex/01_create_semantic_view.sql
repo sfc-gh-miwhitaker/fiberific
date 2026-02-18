@@ -7,7 +7,6 @@ USE SCHEMA SNOWFLAKE_EXAMPLE.SEMANTIC_MODELS;
 USE WAREHOUSE SFE_FIBERIFIC_WH;
 
 CREATE OR REPLACE SEMANTIC VIEW SV_FIBERIFIC_OPS
-  COMMENT = 'DEMO: Fiber telecom operations semantic model for Cortex Analyst (Expires: 2026-03-20)'
 
   TABLES (
     nodes AS SNOWFLAKE_EXAMPLE.FIBERIFIC.RAW_NETWORK_NODES
@@ -211,6 +210,8 @@ CREATE OR REPLACE SEMANTIC VIEW SV_FIBERIFIC_OPS
     traffic.avg_packet_loss AS AVG(traffic_packet_loss)
       SYNONYMS = ('average packet loss', 'mean loss rate')
   )
+
+  COMMENT = 'DEMO: Fiber telecom operations semantic model for Cortex Analyst (Expires: 2026-03-20)'
 
   AI_SQL_GENERATION 'This semantic model covers a regional fiber telecom operator in the Northeastern US. '
     'The network consists of 50 POPs (points of presence) connected by 120 fiber circuits serving 200 enterprise customers. '
