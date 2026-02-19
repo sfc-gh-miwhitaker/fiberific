@@ -81,9 +81,9 @@ CREATE OR REPLACE SEMANTIC VIEW SV_FIBERIFIC_OPS
   )
 
   DIMENSIONS (
-    nodes.node_name
+    nodes.node_name AS node_name
       WITH SYNONYMS = ('POP name', 'site name', 'node'),
-    nodes.node_type
+    nodes.node_type AS node_type
       WITH SYNONYMS = ('POP type', 'site type', 'facility type'),
     nodes.node_city AS city
       WITH SYNONYMS = ('city', 'location'),
@@ -92,14 +92,14 @@ CREATE OR REPLACE SEMANTIC VIEW SV_FIBERIFIC_OPS
     nodes.node_status AS status
       WITH SYNONYMS = ('node status', 'site status'),
 
-    circuits.circuit_name
+    circuits.circuit_name AS circuit_name
       WITH SYNONYMS = ('circuit ID', 'link name', 'CKT'),
-    circuits.circuit_type
+    circuits.circuit_type AS circuit_type
       WITH SYNONYMS = ('service type', 'product type', 'circuit product'),
     circuits.circuit_status AS status
       WITH SYNONYMS = ('circuit status', 'link status'),
 
-    events.event_type
+    events.event_type AS event_type
       WITH SYNONYMS = ('incident type', 'alarm type', 'event category'),
     events.event_severity AS severity
       WITH SYNONYMS = ('severity', 'priority', 'impact level'),
@@ -108,7 +108,7 @@ CREATE OR REPLACE SEMANTIC VIEW SV_FIBERIFIC_OPS
     events.event_root_cause AS root_cause
       WITH SYNONYMS = ('root cause', 'failure reason', 'cause'),
 
-    customers.company_name
+    customers.company_name AS company_name
       WITH SYNONYMS = ('customer name', 'account name', 'company'),
     customers.customer_industry AS industry
       WITH SYNONYMS = ('industry', 'vertical', 'sector'),
@@ -121,9 +121,9 @@ CREATE OR REPLACE SEMANTIC VIEW SV_FIBERIFIC_OPS
     customers.contract_end_date AS contract_end
       WITH SYNONYMS = ('contract end', 'renewal date', 'expiration'),
 
-    orders.order_type
+    orders.order_type AS order_type
       WITH SYNONYMS = ('order type', 'request type'),
-    orders.service_type
+    orders.service_type AS service_type
       WITH SYNONYMS = ('service type', 'product ordered'),
     orders.order_status AS status
       WITH SYNONYMS = ('order status', 'fulfillment status'),
